@@ -144,7 +144,7 @@ export default function Home() {
 	};
 
 	return (
-		<main className="flex min-h-screen flex-col items-center p-24 gap-20">
+		<main className="flex min-h-screen flex-col items-center p-2 md:p-24 gap-4 md:gap-20 mt-4 md:mt-0">
 			<div className="w-full flex flex-row justify-between">
 				<div className="flex flex-row gap-2 items-center">
 					{tableData.length > 0 && (
@@ -190,7 +190,7 @@ export default function Home() {
 							</PopoverContent>
 						</Popover>
 					)}
-					<h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
+					<h3 className="scroll-m-20 text-2xl font-semibold tracking-tight hidden md:block">
 						{`课表 (${tableData.length > 0 ? "数据已更新" : "未导入数据"})`}
 					</h3>
 				</div>
