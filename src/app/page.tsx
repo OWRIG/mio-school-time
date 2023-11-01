@@ -101,12 +101,17 @@ export default function Home() {
 				"mio-school-time-tableData",
 				JSON.stringify(dividedData),
 			);
+			setTableData(dividedData as TableData[]);
 		};
 		reader.readAsBinaryString(file);
 	};
 	const handleFileUploadClick = () => {
 		ref.current?.click();
 	};
+
+	useEffect(() => {
+		setTeacher("杨婉昕");
+	}, [tableData]);
 
 	const teacherSchedule = useMemo(() => {
 		return tableData.find((item) => item.teacher === teacher);
