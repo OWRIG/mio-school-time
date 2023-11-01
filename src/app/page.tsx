@@ -38,6 +38,7 @@ interface CellData {
 	defaultData: { class: string | null; project: string | null } | undefined;
 	onClick: (alignment: [number, number]) => void;
 	alignment: [number, number];
+	// rome-ignore lint/suspicious/noExplicitAny: <explanation>
 	furtherData?: any;
 }
 
@@ -83,7 +84,8 @@ export default function Home() {
 			setTableData(JSON.parse(_data));
 		}
 	}, []);
-	const handleFileUpload = (e) => {
+	// rome-ignore lint/suspicious/noExplicitAny: <explanation>
+	const handleFileUpload = (e: any) => {
 		const file = e.target.files[0];
 		const reader = new FileReader();
 		reader.onload = (evt) => {
@@ -188,6 +190,7 @@ export default function Home() {
 					</h3>
 				</div>
 				<input
+					// @ts-ignore
 					ref={ref}
 					type="file"
 					onChange={handleFileUpload}
@@ -244,6 +247,7 @@ export default function Home() {
 					</TableBody>
 				</Table>
 				<Dialog>
+					{/* @ts-ignore */}
 					<DialogTrigger ref={dialogRef} className="hidden">
 						Open
 					</DialogTrigger>
